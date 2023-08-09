@@ -1,1 +1,41 @@
-<p>botones works!</p>
+<div class="container">
+	<h1>Botones</h1>
+
+	<div class="mt-5">
+		<h5>Boton simple</h5>
+		<button type="button" class="btn btn-primary">{{ mensaje }}</button>
+	</div>
+
+	<div class="mt-5">
+		<h5>Botones con acciones simples.</h5>
+		<button (click)="decrementar()">
+			-
+		</button>
+
+		<span class="mx-2">{{ numero }}</span>
+
+		<button (click)="aumentar()">
+			+
+		</button>
+	</div>
+
+	<div class="mt-5">
+		<h5>Botones con acciones para cambios de estilos.</h5>
+		<div>
+			<button class="btn btn-danger" 		 (click)="text_color = 'text-danger'">Color rojo</button>
+			<button class="btn btn-success mx-2" (click)="text_color = 'text-success'">Color verde</button>
+			<button class="btn btn-primary" 	 (click)="text_color = 'text-primary'">Color azul</button>
+			<button class="btn btn-dark"   	 	 (click)="text_color = ''" style="margin-left: 0.5em;">Restablecer</button>
+		</div>
+
+		<p [ngClass]="text_color">Texto que cambia de color.</p>
+	</div>
+
+	<div class="mt-5">
+		<h5>Habilitar/Deshabilitar Botones (Manipulacion de propiedades)</h5>
+		<button class="btn btn-primary" (click)="toggleBoton()">{{ texto_habilitado }}</button>
+		<button [disabled]="boton_deshabilitado" class="btn btn-success mx-2">Boton muy bonito</button>
+	</div>
+
+
+</div>

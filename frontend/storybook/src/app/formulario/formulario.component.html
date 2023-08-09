@@ -1,0 +1,28 @@
+<div class="container">
+	<h1>Formularios</h1>
+
+	<div class="mt-5">
+		<input type="text" placeholder="Ingresa un texto" class="form-control" #name/>
+
+		<button class="btn btn-primary mt-2" (click)="mostrarEnConsola(name.value)">
+			Mostrar en consola
+		</button>
+	</div>
+
+	<div class="mt-5">
+		<input type="text" placeholder="Ingresa un texto" class="form-control" #name/>
+
+		<button class="btn btn-primary mt-2" (click)="mostrarEnConsolaConSnackbar(name.value)">
+			Mostrar en consola
+		</button>
+
+		<div class="alert alert-primary mt-2" *ngIf="mostrarAlertaExitoso">
+			Se ha enviado el mensaje
+		</div>
+
+		<div class="alert alert-danger mt-2" *ngIf="mostrarAlertaError">
+			No se ha enviado el mensaje
+		</div>
+	</div>
+</div>
+
