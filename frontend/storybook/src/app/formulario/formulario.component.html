@@ -10,19 +10,23 @@
 	</div>
 
 	<div class="mt-5">
-		<input type="text" placeholder="Ingresa un texto" class="form-control" #name/>
+		<input type="text" placeholder="Ingresa un texto" class="form-control" #nameSnack/>
 
-		<button class="btn btn-primary mt-2" (click)="mostrarEnConsolaConSnackbar(name.value)">
+		<button class="btn btn-primary mt-2" (click)="mostrarEnConsolaConSnackbar(nameSnack.value)">
 			Mostrar en consola
 		</button>
 
-		<div class="alert alert-primary mt-2" *ngIf="mostrarAlertaExitoso">
+		<div class="alert alert-primary mt-2" *ngIf="mostrarAlertaExitoso; else mensajeError">
 			Se ha enviado el mensaje
+			<button class="btn btn-danger" (click)="mostrarAlertaExitoso = false">x</button>
 		</div>
 
-		<div class="alert alert-danger mt-2" *ngIf="mostrarAlertaError">
-			No se ha enviado el mensaje
-		</div>
+		<ng-template #mensajeError>
+			<div class="alert alert-danger mt-2" *ngIf="mostrarAlertaError">
+				No se ha enviado el mensaje
+				<button class="btn btn-danger" (click)="mostrarAlertaError = false">x</button>
+			</div>
+		</ng-template>
 	</div>
 </div>
 
