@@ -28,5 +28,63 @@
 			</div>
 		</ng-template>
 	</div>
+
+	<div class="mt-5">
+		<h5>Formulario simple</h5>
+		<div class="card">
+			<div class="card-body">
+				<form (ngSubmit)="procesar()">
+					<div class="mb-2">
+						<label class="form-label">Nombre:</label>
+						<input type="text" name="nombre" class="form-control" placeholder="Por favor, ingrese un nombre" [(ngModel)]="persona.nombre"/>
+					</div>
+
+					<div>
+						<label class="form-label">Edad:</label>
+						<input type="number" name="edad" class="form-control" placeholder="Por favor, ingresa una edad" [(ngModel)]="persona.edad"/>
+					</div>
+
+					<button class="btn btn-primary mt-2">
+						Enviar
+					</button>
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+	<hr/>
+
+	<div class="mt-5">
+		<h5>Formulario con validacion de input</h5>
+		<div class="card">
+			<div class="card-body">
+				<form (ngSubmit)="procesarConValidacion()" #formPersona="ngForm">
+					<div class="mb-2">
+						<label class="form-label">Nombre:</label>
+						<input type="text" name="nombreValidacion" class="form-control" placeholder="Por favor, ingrese un nombre" [(ngModel)]="persona2.nombre" required #nombreValidacion="ngModel"/>
+
+						<div class="alert alert-danger mt-2" [hidden]="nombreValidacion.valid || nombreValidacion.pristine">
+							El nombre es obligatorio
+						</div>
+					</div>
+
+					<div>
+						<label class="form-label">Edad:</label>
+						<input type="number" name="edadValidacion" class="form-control" placeholder="Por favor, ingresa una edad" [(ngModel)]="persona2.edad" required #edadValidacion="ngModel"/>
+
+						<div class="alert alert-danger mt-2" [hidden]="edadValidacion.valid || edadValidacion.pristine">
+							Debes ingresar una edad
+						</div>
+					</div>
+
+					<button class="btn btn-primary mt-2" [disabled]="formPersona.invalid">
+						Enviar
+					</button>
+				</form>
+			</div>
+		</div>
+
+	</div>
 </div>
 

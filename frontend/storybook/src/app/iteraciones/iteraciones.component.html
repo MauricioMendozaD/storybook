@@ -9,4 +9,22 @@
 			</li>
 		</ul>
 	</div>
+
+	<div class="mt-5">
+		<h5>Iteracion Simple en tabla.</h5>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">Nombre</th>
+					<th scope="col">Edad</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let persona of personas; let i = index">
+					<td>{{ persona.nombre }}</td> 
+					<td>{{ persona.edad }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>

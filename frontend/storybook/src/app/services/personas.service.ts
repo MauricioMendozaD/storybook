@@ -17,6 +17,9 @@ export class PersonasService {
     },{
       nombre: 'Norma',
       edad: 28
+    }, {
+      nombre: 'Joaquin',
+      edad: 6
     }]
 
     return personas;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Persona } from '../interfaces/persona';
 
 @Component({
   selector: 'app-formulario',
@@ -15,6 +16,16 @@ export class FormularioComponent implements OnInit {
   mostrarAlertaExitoso: boolean = false;
   mostrarAlertaError: boolean = false;
 
+  persona:Persona = {
+    nombre: '',
+    edad: 0
+  }
+
+  persona2:Persona = {
+    nombre: '',
+    edad: 0
+  }
+
   mostrarEnConsola(name:string) {
     console.log("nombre: ", name);
   }
@@ -29,6 +40,14 @@ export class FormularioComponent implements OnInit {
       this.mostrarAlertaExitoso = false;
     }
     
+  }
+
+  procesar() {
+    console.log("procesando: ", this.persona);
+  }
+
+  procesarConValidacion() {
+    console.log("procesando: ", this.persona);
   }
 
 }

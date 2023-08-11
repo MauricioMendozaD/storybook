@@ -6,6 +6,7 @@ import { BotonesComponent } from './botones/botones.component';
 import { SidebarNavegacionComponent } from './sidebar-navegacion/sidebar-navegacion.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { IteracionesComponent } from './iteraciones/iteraciones.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { IteracionesComponent } from './iteraciones/iteraciones.component';
     IteracionesComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
