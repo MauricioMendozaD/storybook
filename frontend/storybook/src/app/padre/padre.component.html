@@ -1,0 +1,10 @@
+<div class="container">
+	<h1>Intercomunicacion</h1>
+
+	<p>padre works!</p>
+
+	<span>{{ texto }}</span>
+
+	<app-hijo [titulo]="textoEnviar" (cambioTexto)="texto = 'Prueba'"></app-hijo>
+
+</div>

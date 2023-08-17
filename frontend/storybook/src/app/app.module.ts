@@ -7,6 +7,8 @@ import { SidebarNavegacionComponent } from './sidebar-navegacion/sidebar-navegac
 import { FormularioComponent } from './formulario/formulario.component';
 import { IteracionesComponent } from './iteraciones/iteraciones.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PadreComponent } from './padre/padre.component';
+import { HijoComponent } from './hijo/hijo.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BotonesComponent,
     SidebarNavegacionComponent,
     FormularioComponent,
-    IteracionesComponent
+    IteracionesComponent,
+    PadreComponent,
+    HijoComponent
   ],
   imports: [
     BrowserModule,
