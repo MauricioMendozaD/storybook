@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from '../interfaces/persona';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario',
@@ -15,6 +16,24 @@ export class FormularioComponent implements OnInit {
 
   mostrarAlertaExitoso: boolean = false;
   mostrarAlertaError: boolean = false;
+
+  // Para formulario reactivo
+  nombreReactivo = new FormControl('', Validators.required);
+  emailReactivo = new FormControl('', [Validators.required, Validators.email]);
+
+  get nombreReactivo2() {
+    return this.formReactivo.get('nombreReactivo') as FormControl;
+  }
+
+  get emailReactivo2() {
+    return this.formReactivo.get('emailReactivo') as FormControl;
+  }
+
+  // Para formulario reactivo con formgroup
+  formReactivo = new FormGroup({
+    'nombreReactivo': new FormControl('', Validators.required),
+    'emailReactivo' : new FormControl('', [Validators.required, Validators.email])
+  });
 
   persona:Persona = {
     nombre: '',
@@ -48,6 +67,14 @@ export class FormularioComponent implements OnInit {
 
   procesarConValidacion() {
     console.log("procesando: ", this.persona);
+  }
+
+  procesarFormularioReactivo() {
+    console.log("Procesando: " + this.nombreReactivo + ', email: ' + this.emailReactivo);
+  }
+
+  procesarFormularioReactivo2() {
+    console.log("Procesando: ", this.formReactivo.value);
   }
 
 }

@@ -1,0 +1,16 @@
+.wrapper {
+	display: flex;
+	position: relative;
+  }
+  
+  #content {
+	width: calc(100% - 250px);
+	padding: 20px;
+	margin-left: 250px;
+  }
+
+  .main-content {
+	padding: 20px; /* Puedes ajustar esto según tus necesidades */
+	margin-left: 250px; /* Ancho del sidebar */
+  }
+  

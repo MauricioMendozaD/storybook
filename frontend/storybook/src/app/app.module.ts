@@ -6,7 +6,7 @@ import { BotonesComponent } from './botones/botones.component';
 import { SidebarNavegacionComponent } from './sidebar-navegacion/sidebar-navegacion.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { IteracionesComponent } from './iteraciones/iteraciones.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

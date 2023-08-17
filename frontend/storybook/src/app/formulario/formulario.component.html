@@ -86,5 +86,85 @@
 		</div>
 
 	</div>
+
+	<div class="mt-5">
+		<h5>Formulario reactivo</h5>
+		<div class="card">
+			<div class="card-body">
+				<form (ngSubmit)="procesarFormularioReactivo()" #formPersona2="ngForm">
+					<div class="mb-2">
+						<label class="form-label">Nombre:</label>
+						<input type="text" name="nombreReactivo" [formControl]="nombreReactivo" class="form-control" placeholder="Por favor, ingrese un nombre" required/>
+
+						<div class="alert alert-danger mt-2" [hidden]="nombreReactivo.valid || nombreReactivo.pristine">
+							El nombre es obligatorio
+						</div>
+					</div>
+
+					<div>
+						<label class="form-label">Email:</label>
+						<input type="email" name="emailReactivo" [formControl]="emailReactivo" class="form-control" placeholder="Por favor, ingresa un email" required/>
+
+						<div class="alert alert-danger mt-2" [hidden]="emailReactivo.valid || emailReactivo.pristine">
+							
+							<span *ngIf="emailReactivo.errors?.['required']">
+								Debes ingresar un email
+							</span>
+
+							<span *ngIf="emailReactivo.errors?.['email']">
+								El email debe ser valido
+							</span>
+							
+						</div>
+					</div>
+
+					<button class="btn btn-primary mt-2" [disabled]="formPersona2.invalid">
+						Enviar
+					</button>
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="mt-5">
+		<h5>Formulario reactivo con FormGroup</h5>
+		<div class="card">
+			<div class="card-body">
+				<form (ngSubmit)="procesarFormularioReactivo2()" #formPersona="ngForm" [formGroup]="formReactivo">
+					<div class="mb-2">
+						<label class="form-label">Nombre:</label>
+						<input type="text" name="nombreReactivo" formControlName="nombreReactivo" class="form-control" placeholder="Por favor, ingrese un nombre" required/>
+
+						<div class="alert alert-danger mt-2" [hidden]="nombreReactivo2.valid || nombreReactivo2.pristine">
+							El nombre es obligatorio
+						</div>
+					</div>
+
+					<div>
+						<label class="form-label">Email:</label>
+						<input type="email" name="emailReactivo" formControlName="emailReactivo" class="form-control" placeholder="Por favor, ingresa un email" required/>
+
+						<div class="alert alert-danger mt-2" [hidden]="emailReactivo2.valid || emailReactivo2.pristine">
+							
+							<span *ngIf="formReactivo.get('emailReactivo')?.errors?.['required']">
+								Debes ingresar un email
+							</span>
+
+							<span *ngIf="formReactivo.get('emailReactivo')?.errors?.['email']">
+								El email debe ser valido
+							</span>
+							
+						</div>
+					</div>
+
+					<button class="btn btn-primary mt-2" [disabled]="formReactivo.invalid">
+						Enviar
+					</button>
+				</form>
+			</div>
+		</div>
+
+	</div>
 </div>
 
