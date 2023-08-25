@@ -13,6 +13,41 @@ import { AddMessagesComponent } from './add-messages/add-messages.component';
 import { ListMessagesComponent } from './list-messages/list-messages.component';
 import { MessagesComponent } from './messages/messages.component';
 
+import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+const routes:Routes = [
+  {
+    path: "home",
+    component: AppComponent
+  },
+  {
+    path: "botones",
+    component: BotonesComponent
+  },
+  {
+    path: "formularios",
+    component: FormularioComponent
+  },
+  {
+    path: "iteraciones",
+    component: IteracionesComponent
+  },
+  {
+    path: "intercomunicacion",
+    component: PadreComponent
+  },
+  {
+    path: "",
+    redirectTo: "/home",
+    pathMatch: 'full'
+  },
+  {
+    path: "**",
+    component: NotFoundComponent
+  }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,12 +59,14 @@ import { MessagesComponent } from './messages/messages.component';
     HijoComponent,
     AddMessagesComponent,
     ListMessagesComponent,
-    MessagesComponent
+    MessagesComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
