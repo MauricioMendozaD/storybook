@@ -9,6 +9,9 @@ import { IteracionesComponent } from './iteraciones/iteraciones.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PadreComponent } from './padre/padre.component';
 import { HijoComponent } from './hijo/hijo.component';
+import { AddMessagesComponent } from './add-messages/add-messages.component';
+import { ListMessagesComponent } from './list-messages/list-messages.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { HijoComponent } from './hijo/hijo.component';
     FormularioComponent,
     IteracionesComponent,
     PadreComponent,
-    HijoComponent
+    HijoComponent,
+    AddMessagesComponent,
+    ListMessagesComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

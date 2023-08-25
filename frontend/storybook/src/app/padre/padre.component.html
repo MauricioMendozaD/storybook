@@ -1,10 +1,12 @@
 <div class="container">
 	<h1>Intercomunicacion</h1>
 
-	<p>padre works!</p>
+	<h3>Componente padre</h3>
+
+	<input type="text" class="form-control" (keyup)="emitirCambioTexto()" [(ngModel)]="textoCompartido"/>
 
 	<span>{{ texto }}</span>
 
-	<app-hijo [titulo]="textoEnviar" (cambioTexto)="texto = 'Prueba'"></app-hijo>
+	<app-hijo [titulo]="textoEnviar" [(textoCompartido)]="textoCompartido"></app-hijo>
 
 </div>

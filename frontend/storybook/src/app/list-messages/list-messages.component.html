@@ -1,0 +1,7 @@
+<p>list-messages works!</p>
+<ul>
+	<li *ngFor="let mensaje of messagesService.messages">
+		{{ mensaje }}
+	</li>
+</ul>
+{{ messagesService.messages | json }}

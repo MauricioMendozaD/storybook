@@ -12,15 +12,16 @@ export class HijoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  text:string = '';
+  //textoCompartido:string = '';
 
   @Input() titulo?:string;
+  @Input() textoCompartido?:string;
 
-  @Output() cambioTexto = new EventEmitter<string>();
+  @Output() textoCompartidoChange = new EventEmitter<string>();
 
   emitirCambioTexto() {
-    console.log("Texto cambiado: ", this.text);
-    this.cambioTexto.emit(this.text);
+    console.log("Texto cambiado: ", this.textoCompartido);
+    this.textoCompartidoChange.emit(this.textoCompartido);
   }
 
 }

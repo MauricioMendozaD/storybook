@@ -14,5 +14,14 @@ export class PadreComponent implements OnInit {
 
   textoEnviar = 'Texto para hijo';
   texto:string = '';
+  textoCompartido:string = '';
+
+  emitirCambioTexto() {
+    console.log("cambio texto: ", this.textoCompartido)
+  }
+
+  textoCompartidoChange() {
+    console.log("cambio texto compartido: ", this.textoCompartido);
+  }
 
 }
