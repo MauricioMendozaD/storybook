@@ -6,6 +6,7 @@
 	<input type="text" class="form-control" (keyup)="emitirCambioTexto()" [(ngModel)]="textoCompartido"/>
 
 	<span>{{ texto }}</span>
+	<span>{{ parametro }}</span>
 
 	<app-hijo [titulo]="textoEnviar" [(textoCompartido)]="textoCompartido"></app-hijo>
 

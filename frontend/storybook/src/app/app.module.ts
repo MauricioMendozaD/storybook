@@ -38,8 +38,12 @@ const routes:Routes = [
     component: PadreComponent
   },
   {
+    path: "intercomunicacion/:id",
+    component: PadreComponent
+  },
+  {
     path: "",
-    redirectTo: "/home",
+    redirectTo: "home",
     pathMatch: 'full'
   },
   {
